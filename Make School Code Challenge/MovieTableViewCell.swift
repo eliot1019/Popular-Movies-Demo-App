@@ -6,6 +6,8 @@
 //  Copyright © 2017 Eliot Han. All rights reserved.
 //
 
+//Our tableViewCell for movies
+
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
@@ -28,17 +30,18 @@ class MovieTableViewCell: UITableViewCell {
         artView.image = UIImage(named: "defaultArt")
         contentView.addSubview(artView)
         
-        titleLabel = UILabel(frame: CGRect(x: artView.frame.maxX + 10, y: height * (1/5), width: (width - artView.frame.maxX) * (4/5), height: height * (1/3)))
+        titleLabel = MarqueeLabel(frame: CGRect(x: artView.frame.maxX + 8, y: height * (1/5), width: (width - artView.frame.maxX - 8) * (3/4), height: height * (1/3)), duration: 8, fadeLength: 25)
         titleLabel.font = UIFont(name: "Avenir-Medium", size: 15)
         contentView.addSubview(titleLabel)
         
-        dateLabel = UILabel(frame:  CGRect(x: artView.frame.maxX + 10, y: titleLabel.frame.maxY, width: titleLabel.frame.width, height: height * (1/5)))
+        dateLabel = UILabel(frame:  CGRect(x: artView.frame.maxX + 8, y: titleLabel.frame.maxY, width: titleLabel.frame.width, height: height * (1/5)))
         dateLabel.font = UIFont(name: "Avenir-Medium", size: 12)
         dateLabel.textColor = UIColor.gray
         contentView.addSubview(dateLabel)
         
-        priceLabel = UILabel(frame: CGRect(x: titleLabel.frame.maxX + 5, y: height * 1/3, width: 40, height: height * 1/3))
+        priceLabel = UILabel(frame: CGRect(x: width - 45, y: height * 1/3, width: 40, height: height * 1/3))
         priceLabel.font = UIFont(name: "Avenir-Medium", size: 13)
+        priceLabel.textAlignment = .left
         contentView.addSubview(priceLabel)
         
         

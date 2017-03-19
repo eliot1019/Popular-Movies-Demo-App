@@ -11,9 +11,9 @@
 import UIKit
 
 class ListVC: UIViewController {
-    var tableView: UITableView!
-    var movies: [Movie] = []
-    var imageCache: NSMutableDictionary = [:]
+    var tableView: UITableView!                //Our tableview
+    var movies: [Movie] = []                   //Array of Movies
+    var imageCache: NSMutableDictionary = [:]  //Cache of downloaded images
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class ListVC: UIViewController {
         //Configure datatask
         dataTask = defaultSession.dataTask(with: url, completionHandler: {data, response, error in
             if let error = error{
-                print("Error: \(error.localizedDescription)")
+                print("Error geting movies: \(error.localizedDescription)")
             }else if let httpResponse = response as? HTTPURLResponse{
                 if httpResponse.statusCode == 200{  //if success
                     self.createMovieObjects(data: data!)
@@ -62,7 +62,7 @@ class ListVC: UIViewController {
                     //Reference to movie dictionary
                     let ref = movieArray[i] as! NSDictionary
                     
-                    //Movie properties
+                    //Movie properties from parsing
                     let title = (ref["im:name"] as! NSDictionary)["label"] as! String
                     let releaseDate = (ref["im:releaseDate"] as! NSDictionary)["label"] as! String
                     let price = (ref["im:price"] as! NSDictionary)["label"] as! String
@@ -71,10 +71,10 @@ class ListVC: UIViewController {
                     let contentLinkArray = ref["link"] as! NSArray
                     let contentLinkString = ((contentLinkArray[0] as! NSDictionary)["attributes"] as! NSDictionary)["href"] as! String
                     
-                    //Before creating the movie, let's format the date
+                    //Before creating the movie, let's format the date string
                     let dateFormatted = releaseDate.substring(to: releaseDate.characters.index(of: "T")!)
                     
-                    //Create and store movie, then update the tableview
+                    //Create and store movie, then insert a row into the tableview
                     let movie = Movie(title: title, releaseDate: dateFormatted, price: price, bigImgUrlString: bigImgUrlString, contentLinkString: contentLinkString)
                     movies.append(movie)
                     DispatchQueue.main.sync {
@@ -83,13 +83,13 @@ class ListVC: UIViewController {
                 }
             }
         } catch let error as NSError {
-            print("Error turning search result into JSON:", error.localizedDescription)
+            print("Error turning result into JSON:", error.localizedDescription)
         }
     }
     
 }
 
-//MARK: TableView
+//MARK: TableView related methods
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     //Initializes TableView
@@ -146,6 +146,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     //Actions to take upon a row selection
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         //The chosen movie and it's image
         let chosenMovie = movies[indexPath.row]
         let movieImage = imageCache[String(indexPath.row)] as! UIImage

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Eliot Han. All rights reserved.
 //
 
+//Our in app model for Movies
+
 import Foundation
 
 struct Movie {

@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 class MovieVC: UIViewController {
-    var movie: Movie!   // We will hold the reference to the movie
+    var movie: Movie!   // We will hold a reference to the movie
     
     private var artView: UIImageView!
     private var dateLabel: UILabel!
@@ -32,7 +32,7 @@ class MovieVC: UIViewController {
         
         let width = view.frame.width
     
-        artView = UIImageView(frame: CGRect(x: width * 1/5, y: 45 + 10, width: width * 3/5, height: (width * 3/5) * 1.3))
+        artView = UIImageView(frame: CGRect(x: width * 1/5, y: 70, width: width * 3/5, height: (width * 3/5) * 1.3))
         artView.image = image
         view.addSubview(artView)
         
@@ -48,7 +48,7 @@ class MovieVC: UIViewController {
         priceLabel.font = UIFont.systemFont(ofSize: 15)
         view.addSubview(priceLabel)
 
-        itunesButton = UIButton(frame: CGRect(x: width * 1/3, y: priceLabel.frame.maxY + 10, width: width * 1/3, height: (width * 1/3) * 2/3))
+        itunesButton = UIButton(frame: CGRect(x: width * 1/3, y: priceLabel.frame.maxY + 10, width: width * 1/3, height: (width * 1/3) * 3/5))
         itunesButton.setImage(UIImage(named: "itunesIcon"), for: .normal)
         itunesButton.addTarget(self, action: #selector(itunesButtonPressed), for: .touchUpInside)
         view.addSubview(itunesButton)

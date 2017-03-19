@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1579D0731E7E1654004C31CE /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579D0721E7E1654004C31CE /* MarqueeLabel.swift */; };
 		15D50E5E1E7CF8E400AE1912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D50E5D1E7CF8E400AE1912 /* AppDelegate.swift */; };
 		15D50E601E7CF8E400AE1912 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D50E5F1E7CF8E400AE1912 /* ListVC.swift */; };
 		15D50E631E7CF8E400AE1912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D50E611E7CF8E400AE1912 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1579D0721E7E1654004C31CE /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		15D50E5A1E7CF8E400AE1912 /* Make School Code Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make School Code Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D50E5D1E7CF8E400AE1912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D50E5F1E7CF8E400AE1912 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
@@ -86,11 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				15D50E5D1E7CF8E400AE1912 /* AppDelegate.swift */,
-				15D50E5F1E7CF8E400AE1912 /* ListVC.swift */,
-				15D50E7D1E7CF93300AE1912 /* MovieVC.swift */,
-				15D50E7F1E7CF96100AE1912 /* MovieTableViewCell.swift */,
-				15D50E811E7CFF6100AE1912 /* Movie.swift */,
-				15D50E831E7DD8BF00AE1912 /* UtilityFunctions.swift */,
+				15EF92101E7E19CD00A23E0C /* View Controllers */,
+				15EF92111E7E19D700A23E0C /* Views */,
+				15EF92121E7E19DD00A23E0C /* Models */,
+				15EF92131E7E19E500A23E0C /* Utility */,
 				15D50E611E7CF8E400AE1912 /* Main.storyboard */,
 				15D50E641E7CF8E400AE1912 /* Assets.xcassets */,
 				15D50E661E7CF8E400AE1912 /* LaunchScreen.storyboard */,
@@ -106,6 +107,40 @@
 				15D50E741E7CF8E400AE1912 /* Info.plist */,
 			);
 			path = "Make School Code ChallengeTests";
+			sourceTree = "<group>";
+		};
+		15EF92101E7E19CD00A23E0C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				15D50E5F1E7CF8E400AE1912 /* ListVC.swift */,
+				15D50E7D1E7CF93300AE1912 /* MovieVC.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		15EF92111E7E19D700A23E0C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15D50E7F1E7CF96100AE1912 /* MovieTableViewCell.swift */,
+				1579D0721E7E1654004C31CE /* MarqueeLabel.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		15EF92121E7E19DD00A23E0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15D50E811E7CFF6100AE1912 /* Movie.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		15EF92131E7E19E500A23E0C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				15D50E831E7DD8BF00AE1912 /* UtilityFunctions.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +252,7 @@
 				15D50E841E7DD8BF00AE1912 /* UtilityFunctions.swift in Sources */,
 				15D50E601E7CF8E400AE1912 /* ListVC.swift in Sources */,
 				15D50E801E7CF96100AE1912 /* MovieTableViewCell.swift in Sources */,
+				1579D0731E7E1654004C31CE /* MarqueeLabel.swift in Sources */,
 				15D50E5E1E7CF8E400AE1912 /* AppDelegate.swift in Sources */,
 				15D50E821E7CFF6100AE1912 /* Movie.swift in Sources */,
 			);
@@ -428,6 +464,7 @@
 				15D50E791E7CF8E400AE1912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		15D50E7A1E7CF8E400AE1912 /* Build configuration list for PBXNativeTarget "Make School Code ChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +473,7 @@
 				15D50E7C1E7CF8E400AE1912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
