@@ -1,7 +1,6 @@
 //  MarqueeLabel.swift
 //
 //  Created by Charles Powell on 8/6/14.
-//  Modified by Eliot Han on 1/20/17
 
 //A custom label. If passed text which is too long for it's frame, it will "scroll" the text.
 
